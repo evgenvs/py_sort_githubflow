@@ -1,5 +1,15 @@
 language: python
 python:
   - "3.4.6"
+
+install: 
+ - "pip install -r requirements.txt"
+
 script:
-  python3 -m unittest discover
+ - "python -m unittest tests/test_sort.py"
+ - "coverage run --omit='*/site-packages/*' -m unittest"
+
+after_success: 
+ - "coveralls"
+
+
