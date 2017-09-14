@@ -15,3 +15,14 @@ def bubbleSort(alist):
                 alist[i] = alist[i+1]
                 alist[i+1] = temp
     return alist
+
+
+def insertionSort(alist):
+    for j in range(1, len(alist)):
+        key = alist[j]
+        i = j-1
+        while i>=0 and alist[i] > key:
+            alist[i+1] = alist[i]
+            i-=1
+        alist[i+1] = key
+    return alist
